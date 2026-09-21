@@ -108,6 +108,13 @@
   여닫는 사이드 드로어
 - 카테고리별 아코디언(접기/펼치기) + 세부 카테고리 구분, 식당명 클릭 시 카카오맵 새 탭
 
+### 16. GitHub Pages 배포 + README 링크·스크린샷 (2026-09-21)
+
+- 저장소 Settings → Pages → Source를 GitHub Actions로 설정 (사용자)
+- README 최상단에 배포 링크(https://05solar.github.io/BP-1/)와 앱 스크린샷 추가
+  (docs/screenshot.png — Edge 헤드리스로 촬영)
+- push로 배포 워크플로 트리거, 배포 성공 확인
+
 ## 다음에 할 수 있는 것 (아이디어)
 
 - 실제 식당 데이터 교체 (카카오 로컬 API 수집 스크립트)

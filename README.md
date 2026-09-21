@@ -1,3 +1,7 @@
+## 🔗 https://05solar.github.io/BP-1/
+
+![전북대 점심 슬롯머신 스크린샷](docs/screenshot.png)
+
 # 🎰 전북대 점심 슬롯머신 (Lunch Jackpot)
 
 전북대학교 근처에서 "오늘 점심 뭐 먹지?"를 해결해주는 슬롯머신 웹앱입니다.
@@ -9,8 +13,6 @@
 
 결과판의 식당 이름을 클릭하면 **카카오맵 상세 페이지(위치)** 가 새 탭으로 열립니다.
 음식 종류는 **완전 랜덤** 또는 상단 칩에서 **직접 선택**할 수 있습니다.
-
-> 🔗 배포 주소: https://05solar.github.io/BP-1/
 
 ## 실행 방법
 
@@ -38,6 +40,8 @@ BP-01/
 ├── process.md                        # 진행 상황 기록 (명령마다 갱신)
 ├── tools/
 │   └── fetchRestaurants.mjs          # 카카오 로컬 API로 식당 데이터 수집·menuData.ts 생성
+├── docs/
+│   └── screenshot.png                # README용 앱 스크린샷
 ├── .github/workflows/deploy.yml      # GitHub Pages 자동 배포 워크플로
 └── src/
     ├── main.tsx                      # React 앱 마운트 진입점
