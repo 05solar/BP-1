@@ -42,7 +42,7 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Black Han Sans', 'Jua', sans-serif;
+  font-weight: 800;
   font-size: 34px;
   color: #fff;
   text-shadow: 0 3px 0 rgba(120, 60, 0, 0.6);
@@ -57,7 +57,7 @@
 
 /* 지도 이동 배지 */
 .result-board__map-badge {
-  font-family: 'Jua', sans-serif;
+  font-weight: 600;
   font-size: 14px;
   color: #fff;
   background: rgba(255, 255, 255, 0.16);

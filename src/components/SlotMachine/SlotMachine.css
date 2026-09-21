@@ -21,7 +21,7 @@
 }
 
 .slot-machine__title {
-  font-family: 'Black Han Sans', 'Jua', sans-serif;
+  font-weight: 900;
   font-size: 30px;
   letter-spacing: 3px;
   color: #ffe9a8;
