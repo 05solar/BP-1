@@ -18,11 +18,12 @@ if (!KEY) {
   process.exit(1)
 }
 
-// 전북대 전주캠퍼스 중심 좌표. 반경 RADIUS_M 이내의 식당만 사용
-const CENTER = { x: 127.1292, y: 35.8467 }
-const RADIUS_M = 2000
-// 수집 영역: 중심 기준 2km를 덮는 사각형 (경도 1도≈90.2km, 위도 1도≈111.3km)
-const RECT = { minX: 127.1069, minY: 35.8287, maxX: 127.1515, maxY: 35.8647 }
+// 기준점: 헌혈의집 전북대한옥센터 (전주 덕진구 백제대로 567, 전북대 구정문 앞)
+// 반경 RADIUS_M 이내의 식당만 사용
+const CENTER = { x: 127.127526738805, y: 35.8446013136104 }
+const RADIUS_M = 1000
+// 수집 영역: 중심 기준 1km를 덮는 사각형 (경도 1도≈90.2km, 위도 1도≈111.3km)
+const RECT = { minX: 127.1164, minY: 35.8356, maxX: 127.1387, maxY: 35.8536 }
 
 const API = 'https://dapi.kakao.com/v2/local/search/category.json'
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
@@ -171,7 +172,7 @@ async function main() {
   const ts = `/**
  * [데이터 파일] menuData.ts  ⚠️ 자동 생성 — 직접 수정하지 마세요
  * tools/fetchRestaurants.mjs가 카카오 로컬 API로 생성한 전북대학교 주변 실제 식당 데이터입니다.
- * (생성일: ${today}, 캠퍼스 중심 반경 ${RADIUS_M / 1000}km, 세부 카테고리당 가까운 순 최대 ${MAX_PER_SUB}곳)
+ * (생성일: ${today}, 헌혈의집 전북대한옥센터 기준 반경 ${RADIUS_M / 1000}km, 세부 카테고리당 가까운 순 최대 ${MAX_PER_SUB}곳)
  * 갱신:  KAKAO_REST_KEY=<키> node tools/fetchRestaurants.mjs
  */
 
