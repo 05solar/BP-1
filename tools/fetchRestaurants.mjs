@@ -18,9 +18,11 @@ if (!KEY) {
   process.exit(1)
 }
 
-// 전북대 전주캠퍼스 중심 좌표와 수집 영역(대략 캠퍼스 + 구정문/신정문/덕진동 상권)
+// 전북대 전주캠퍼스 중심 좌표. 반경 RADIUS_M 이내의 식당만 사용
 const CENTER = { x: 127.1292, y: 35.8467 }
-const RECT = { minX: 127.112, minY: 35.833, maxX: 127.148, maxY: 35.861 }
+const RADIUS_M = 2000
+// 수집 영역: 중심 기준 2km를 덮는 사각형 (경도 1도≈90.2km, 위도 1도≈111.3km)
+const RECT = { minX: 127.1069, minY: 35.8287, maxX: 127.1515, maxY: 35.8647 }
 
 const API = 'https://dapi.kakao.com/v2/local/search/category.json'
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms))
@@ -93,7 +95,8 @@ const TOP_MAP = {
   치킨: { name: '치킨', emoji: '🍗' },
   패스트푸드: { name: '패스트푸드', emoji: '🍔' },
 }
-const EXCLUDE_TOP = new Set(['술집'])
+// 점심 메뉴가 아니거나(술집·간식=빵집·디저트류) 분류 불명(기타)인 상위 카테고리는 제외
+const EXCLUDE_TOP = new Set(['술집', '간식', '기타'])
 const MAX_PER_SUB = 15
 const MIN_PER_SUB = 3
 
@@ -105,6 +108,9 @@ async function main() {
   // { 카테고리 → { 세부 → [식당] } } 구조로 집계
   const tree = new Map()
   for (const d of found.values()) {
+    const dist = haversineM(CENTER.x, CENTER.y, Number(d.x), Number(d.y))
+    if (dist > RADIUS_M) continue
+
     const parts = d.category_name.split(' > ').map((s) => s.trim())
     const top = parts[1] ?? '기타'
     if (EXCLUDE_TOP.has(top)) continue
@@ -124,7 +130,7 @@ async function main() {
     subs.get(subName).push({
       name: d.place_name,
       url: d.place_url.replace(/^http:/, 'https:'),
-      dist: haversineM(CENTER.x, CENTER.y, Number(d.x), Number(d.y)),
+      dist,
     })
   }
 
@@ -142,8 +148,9 @@ async function main() {
       if (trimmed.length >= MIN_PER_SUB) subList.push({ name: subName, restaurants: trimmed })
       else misc.push(...trimmed)
     }
-    if (misc.length >= MIN_PER_SUB)
-      subList.push({ name: '기타', restaurants: misc.slice(0, MAX_PER_SUB) })
+    // '기타' 카테고리의 잔여 묶음은 분류 불명 가게가 섞이므로 버린다
+    if (misc.length >= MIN_PER_SUB && catName !== '기타')
+      subList.push({ name: '그 외', restaurants: misc.slice(0, MAX_PER_SUB) })
     if (subList.length > 0)
       categories.push({ name: catName, emoji: emojiOf(catName), subCategories: subList })
   }
@@ -164,7 +171,7 @@ async function main() {
   const ts = `/**
  * [데이터 파일] menuData.ts  ⚠️ 자동 생성 — 직접 수정하지 마세요
  * tools/fetchRestaurants.mjs가 카카오 로컬 API로 생성한 전북대학교 주변 실제 식당 데이터입니다.
- * (생성일: ${today}, 캠퍼스 중심 반경 약 1.5km, 세부 카테고리당 가까운 순 최대 ${MAX_PER_SUB}곳)
+ * (생성일: ${today}, 캠퍼스 중심 반경 ${RADIUS_M / 1000}km, 세부 카테고리당 가까운 순 최대 ${MAX_PER_SUB}곳)
  * 갱신:  KAKAO_REST_KEY=<키> node tools/fetchRestaurants.mjs
  */
 

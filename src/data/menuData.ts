@@ -1,7 +1,7 @@
 /**
  * [데이터 파일] menuData.ts  ⚠️ 자동 생성 — 직접 수정하지 마세요
  * tools/fetchRestaurants.mjs가 카카오 로컬 API로 생성한 전북대학교 주변 실제 식당 데이터입니다.
- * (생성일: 2026-09-21, 캠퍼스 중심 반경 약 1.5km, 세부 카테고리당 가까운 순 최대 15곳)
+ * (생성일: 2026-09-21, 캠퍼스 중심 반경 2km, 세부 카테고리당 가까운 순 최대 15곳)
  * 갱신:  KAKAO_REST_KEY=<키> node tools/fetchRestaurants.mjs
  */
 
@@ -26,6 +26,71 @@ export const foodCategories: FoodCategory[] = [
     "name": "한식",
     "emoji": "🍚",
     "subCategories": [
+      {
+        "name": "해물·생선",
+        "restaurants": [
+          {
+            "name": "달코롬딱새우와연어장",
+            "url": "https://place.map.kakao.com/1726747845"
+          },
+          {
+            "name": "육회바른연어 전주전북대점",
+            "url": "https://place.map.kakao.com/1830537123"
+          },
+          {
+            "name": "광장수산",
+            "url": "https://place.map.kakao.com/898953492"
+          },
+          {
+            "name": "만선회센타",
+            "url": "https://place.map.kakao.com/8960220"
+          },
+          {
+            "name": "브라더아구찜 전북대점",
+            "url": "https://place.map.kakao.com/2037369886"
+          },
+          {
+            "name": "소몽",
+            "url": "https://place.map.kakao.com/1425025335"
+          },
+          {
+            "name": "성게향회관",
+            "url": "https://place.map.kakao.com/459396108"
+          },
+          {
+            "name": "풍천민물숯불장어",
+            "url": "https://place.map.kakao.com/27461390"
+          },
+          {
+            "name": "낙쭈족&한우곱창",
+            "url": "https://place.map.kakao.com/1505645659"
+          },
+          {
+            "name": "군산아구탕아구찜",
+            "url": "https://place.map.kakao.com/16529831"
+          },
+          {
+            "name": "낙지야낙지야고기사랑",
+            "url": "https://place.map.kakao.com/1772523622"
+          },
+          {
+            "name": "인생아구찜 송천금암점",
+            "url": "https://place.map.kakao.com/704001838"
+          },
+          {
+            "name": "어청도",
+            "url": "https://place.map.kakao.com/10580037"
+          },
+          {
+            "name": "덕호수산 2호점",
+            "url": "https://place.map.kakao.com/889998757"
+          },
+          {
+            "name": "남원동촌추어탕",
+            "url": "https://place.map.kakao.com/14518796"
+          }
+        ]
+      },
       {
         "name": "육류·고기",
         "restaurants": [
@@ -92,67 +157,6 @@ export const foodCategories: FoodCategory[] = [
         ]
       },
       {
-        "name": "국밥",
-        "restaurants": [
-          {
-            "name": "여리국밥 전북대점",
-            "url": "https://place.map.kakao.com/1830851738"
-          },
-          {
-            "name": "전주현대옥 덕진광장점",
-            "url": "https://place.map.kakao.com/12648404"
-          },
-          {
-            "name": "덕천식당",
-            "url": "https://place.map.kakao.com/9784823"
-          },
-          {
-            "name": "국밥백서 전주덕진점",
-            "url": "https://place.map.kakao.com/1976243673"
-          },
-          {
-            "name": "남도소머리국밥",
-            "url": "https://place.map.kakao.com/15791758"
-          },
-          {
-            "name": "전주현대옥 전주고속버스터미널점",
-            "url": "https://place.map.kakao.com/18189730"
-          },
-          {
-            "name": "국면당 금암본점",
-            "url": "https://place.map.kakao.com/1116229294"
-          },
-          {
-            "name": "서울전통육개장 전주터미널점",
-            "url": "https://place.map.kakao.com/593878609"
-          },
-          {
-            "name": "진리국밥 덕진점",
-            "url": "https://place.map.kakao.com/112850029"
-          },
-          {
-            "name": "전주제일옥",
-            "url": "https://place.map.kakao.com/14105608"
-          },
-          {
-            "name": "홍익궁중전통육개장 서신점",
-            "url": "https://place.map.kakao.com/1281265097"
-          },
-          {
-            "name": "본가옥",
-            "url": "https://place.map.kakao.com/1875531900"
-          },
-          {
-            "name": "콩나루콩나물국밥 송천점",
-            "url": "https://place.map.kakao.com/27101213"
-          },
-          {
-            "name": "청춘옥 콩나물국밥",
-            "url": "https://place.map.kakao.com/867411320"
-          }
-        ]
-      },
-      {
         "name": "순대",
         "restaurants": [
           {
@@ -180,12 +184,32 @@ export const foodCategories: FoodCategory[] = [
             "url": "https://place.map.kakao.com/1453970380"
           },
           {
+            "name": "원평시골피순대 하가지구점",
+            "url": "https://place.map.kakao.com/1887541840"
+          },
+          {
+            "name": "하가사골피순대",
+            "url": "https://place.map.kakao.com/429728872"
+          },
+          {
+            "name": "강변순대",
+            "url": "https://place.map.kakao.com/18576481"
+          },
+          {
             "name": "서호순대촌",
             "url": "https://place.map.kakao.com/1156477869"
           },
           {
             "name": "울어매순대나라",
             "url": "https://place.map.kakao.com/16921266"
+          },
+          {
+            "name": "번암순대",
+            "url": "https://place.map.kakao.com/1543050127"
+          },
+          {
+            "name": "으뜸순대",
+            "url": "https://place.map.kakao.com/20223909"
           },
           {
             "name": "원조맛고을순대",
@@ -259,84 +283,67 @@ export const foodCategories: FoodCategory[] = [
         ]
       },
       {
-        "name": "해물·생선",
+        "name": "국밥",
         "restaurants": [
           {
-            "name": "달코롬딱새우와연어장",
-            "url": "https://place.map.kakao.com/1726747845"
+            "name": "여리국밥 전북대점",
+            "url": "https://place.map.kakao.com/1830851738"
           },
           {
-            "name": "육회바른연어 전주전북대점",
-            "url": "https://place.map.kakao.com/1830537123"
+            "name": "전주현대옥 덕진광장점",
+            "url": "https://place.map.kakao.com/12648404"
           },
           {
-            "name": "광장수산",
-            "url": "https://place.map.kakao.com/898953492"
+            "name": "덕천식당",
+            "url": "https://place.map.kakao.com/9784823"
           },
           {
-            "name": "만선회센타",
-            "url": "https://place.map.kakao.com/8960220"
+            "name": "국밥백서 전주덕진점",
+            "url": "https://place.map.kakao.com/1976243673"
           },
           {
-            "name": "브라더아구찜 전북대점",
-            "url": "https://place.map.kakao.com/2037369886"
+            "name": "남도소머리국밥",
+            "url": "https://place.map.kakao.com/15791758"
           },
           {
-            "name": "소몽",
-            "url": "https://place.map.kakao.com/1425025335"
+            "name": "전주현대옥 전주고속버스터미널점",
+            "url": "https://place.map.kakao.com/18189730"
           },
           {
-            "name": "성게향회관",
-            "url": "https://place.map.kakao.com/459396108"
+            "name": "국면당 금암본점",
+            "url": "https://place.map.kakao.com/1116229294"
           },
           {
-            "name": "풍천민물숯불장어",
-            "url": "https://place.map.kakao.com/27461390"
+            "name": "서울전통육개장 전주터미널점",
+            "url": "https://place.map.kakao.com/593878609"
           },
           {
-            "name": "낙쭈족&한우곱창",
-            "url": "https://place.map.kakao.com/1505645659"
+            "name": "진리국밥 덕진점",
+            "url": "https://place.map.kakao.com/112850029"
           },
           {
-            "name": "군산아구탕아구찜",
-            "url": "https://place.map.kakao.com/16529831"
+            "name": "전주제일옥",
+            "url": "https://place.map.kakao.com/14105608"
           },
           {
-            "name": "낙지야낙지야고기사랑",
-            "url": "https://place.map.kakao.com/1772523622"
+            "name": "홍익궁중전통육개장 서신점",
+            "url": "https://place.map.kakao.com/1281265097"
           },
           {
-            "name": "인생아구찜 송천금암점",
-            "url": "https://place.map.kakao.com/704001838"
+            "name": "본가옥",
+            "url": "https://place.map.kakao.com/1875531900"
           },
           {
-            "name": "어청도",
-            "url": "https://place.map.kakao.com/10580037"
+            "name": "미남국밥 본점",
+            "url": "https://place.map.kakao.com/467963509"
           },
           {
-            "name": "덕호수산 2호점",
-            "url": "https://place.map.kakao.com/889998757"
+            "name": "콩나루콩나물국밥 송천점",
+            "url": "https://place.map.kakao.com/27101213"
           },
           {
-            "name": "남원동촌추어탕",
-            "url": "https://place.map.kakao.com/14518796"
-          }
-        ]
-      },
-      {
-        "name": "곰탕",
-        "restaurants": [
-          {
-            "name": "바우네나주곰탕 전주본점",
-            "url": "https://place.map.kakao.com/44424601"
-          },
-          {
-            "name": "다하누곰탕",
-            "url": "https://place.map.kakao.com/1557779279"
-          },
-          {
-            "name": "금암우족탕",
-            "url": "https://place.map.kakao.com/16780482"
+            "name": "콩각시굴신랑",
+            "url": "https://place.map.kakao.com/8556912"
           }
         ]
       },
@@ -406,52 +413,101 @@ export const foodCategories: FoodCategory[] = [
         ]
       },
       {
-        "name": "냉면",
+        "name": "찌개·전골",
         "restaurants": [
           {
-            "name": "육쌈냉면 전북대점",
-            "url": "https://place.map.kakao.com/19978054"
+            "name": "엄마손김치찌개",
+            "url": "https://place.map.kakao.com/16428101"
           },
           {
-            "name": "줄벼락",
-            "url": "https://place.map.kakao.com/1266590183"
+            "name": "김치찌개잘하는집",
+            "url": "https://place.map.kakao.com/525505620"
           },
           {
-            "name": "정가네냉면",
-            "url": "https://place.map.kakao.com/664238048"
+            "name": "청년식탁사잇길",
+            "url": "https://place.map.kakao.com/2106945607"
           },
           {
-            "name": "미르밀옥류관 인후점",
-            "url": "https://place.map.kakao.com/25705224"
+            "name": "금암동부대찌개 본점",
+            "url": "https://place.map.kakao.com/8799057"
           },
           {
-            "name": "냉면쟁이고기꾼 송천점",
-            "url": "https://place.map.kakao.com/2039917209"
+            "name": "일등병부대찌개 전주점",
+            "url": "https://place.map.kakao.com/11288782"
           },
           {
-            "name": "평양면옥",
-            "url": "https://place.map.kakao.com/9505038"
+            "name": "놀부부대찌개 전주고속터미널점",
+            "url": "https://place.map.kakao.com/1159143099"
+          },
+          {
+            "name": "미소네김치찌개",
+            "url": "https://place.map.kakao.com/1627914752"
+          },
+          {
+            "name": "다미",
+            "url": "https://place.map.kakao.com/11912646"
+          },
+          {
+            "name": "땅스부대찌개 전주송천점",
+            "url": "https://place.map.kakao.com/1425868517"
+          },
+          {
+            "name": "오늘도김치찜김치찌개",
+            "url": "https://place.map.kakao.com/1357776489"
+          },
+          {
+            "name": "놀부부대찌개 전주덕진점",
+            "url": "https://place.map.kakao.com/203470160"
+          },
+          {
+            "name": "찌개주막",
+            "url": "https://place.map.kakao.com/1672823839"
+          },
+          {
+            "name": "신대화",
+            "url": "https://place.map.kakao.com/16346320"
           }
         ]
       },
       {
-        "name": "설렁탕",
+        "name": "두부전문점",
         "restaurants": [
           {
-            "name": "서울깍두기 전북대점",
-            "url": "https://place.map.kakao.com/1688184233"
+            "name": "원조1958생두부",
+            "url": "https://place.map.kakao.com/9921205"
           },
           {
-            "name": "족보설렁탕",
-            "url": "https://place.map.kakao.com/10789588"
+            "name": "북창동순두부 전주서신점",
+            "url": "https://place.map.kakao.com/11782283"
           },
           {
-            "name": "전주깍두기 본점",
-            "url": "https://place.map.kakao.com/1387347730"
+            "name": "맷돌순두부",
+            "url": "https://place.map.kakao.com/1842384517"
           },
           {
-            "name": "본설렁탕 전주금암점",
-            "url": "https://place.map.kakao.com/484083322"
+            "name": "멧돌순두부식당",
+            "url": "https://place.map.kakao.com/11257672"
+          }
+        ]
+      },
+      {
+        "name": "곰탕",
+        "restaurants": [
+          {
+            "name": "바우네나주곰탕 전주본점",
+            "url": "https://place.map.kakao.com/44424601"
+          },
+          {
+            "name": "다하누곰탕",
+            "url": "https://place.map.kakao.com/1557779279"
+          },
+          {
+            "name": "금암우족탕",
+            "url": "https://place.map.kakao.com/16780482"
+          },
+          {
+            "name": "옥수회관",
+            "url": "https://place.map.kakao.com/16808668"
           }
         ]
       },
@@ -485,35 +541,68 @@ export const foodCategories: FoodCategory[] = [
         ]
       },
       {
-        "name": "찌개·전골",
+        "name": "냉면",
         "restaurants": [
           {
-            "name": "엄마손김치찌개",
-            "url": "https://place.map.kakao.com/16428101"
+            "name": "육쌈냉면 전북대점",
+            "url": "https://place.map.kakao.com/19978054"
           },
           {
-            "name": "김치찌개잘하는집",
-            "url": "https://place.map.kakao.com/525505620"
+            "name": "줄벼락",
+            "url": "https://place.map.kakao.com/1266590183"
           },
           {
-            "name": "청년식탁사잇길",
-            "url": "https://place.map.kakao.com/2106945607"
+            "name": "정가네냉면",
+            "url": "https://place.map.kakao.com/664238048"
           },
           {
-            "name": "금암동부대찌개 본점",
-            "url": "https://place.map.kakao.com/8799057"
+            "name": "미르밀옥류관 인후점",
+            "url": "https://place.map.kakao.com/25705224"
           },
           {
-            "name": "일등병부대찌개 전주점",
-            "url": "https://place.map.kakao.com/11288782"
+            "name": "냉면쟁이고기꾼 송천점",
+            "url": "https://place.map.kakao.com/2039917209"
           },
           {
-            "name": "놀부부대찌개 전주고속터미널점",
-            "url": "https://place.map.kakao.com/1159143099"
+            "name": "평양면옥",
+            "url": "https://place.map.kakao.com/9505038"
           },
           {
-            "name": "미소네김치찌개",
-            "url": "https://place.map.kakao.com/1627914752"
+            "name": "금성칡냉면",
+            "url": "https://place.map.kakao.com/1491386352"
+          },
+          {
+            "name": "오장면옥숯불갈비",
+            "url": "https://place.map.kakao.com/842530618"
+          },
+          {
+            "name": "솔내냉면황태찜",
+            "url": "https://place.map.kakao.com/1303353652"
+          }
+        ]
+      },
+      {
+        "name": "설렁탕",
+        "restaurants": [
+          {
+            "name": "서울깍두기 전북대점",
+            "url": "https://place.map.kakao.com/1688184233"
+          },
+          {
+            "name": "족보설렁탕",
+            "url": "https://place.map.kakao.com/10789588"
+          },
+          {
+            "name": "전주깍두기 본점",
+            "url": "https://place.map.kakao.com/1387347730"
+          },
+          {
+            "name": "본설렁탕 전주금암점",
+            "url": "https://place.map.kakao.com/484083322"
+          },
+          {
+            "name": "내고향전통설렁탕",
+            "url": "https://place.map.kakao.com/24694113"
           }
         ]
       },
@@ -543,36 +632,24 @@ export const foodCategories: FoodCategory[] = [
           {
             "name": "향감자탕",
             "url": "https://place.map.kakao.com/1888230525"
+          },
+          {
+            "name": "하가감자탕",
+            "url": "https://place.map.kakao.com/19401998"
+          },
+          {
+            "name": "본한방감자탕",
+            "url": "https://place.map.kakao.com/15662441"
+          },
+          {
+            "name": "노을감자탕",
+            "url": "https://place.map.kakao.com/15096365"
           }
         ]
       },
       {
-        "name": "기타",
+        "name": "주먹밥",
         "restaurants": [
-          {
-            "name": "원조1958생두부",
-            "url": "https://place.map.kakao.com/9921205"
-          },
-          {
-            "name": "북창동순두부 전주서신점",
-            "url": "https://place.map.kakao.com/11782283"
-          },
-          {
-            "name": "모래내팥죽집",
-            "url": "https://place.map.kakao.com/26069758"
-          },
-          {
-            "name": "엄마손팥죽",
-            "url": "https://place.map.kakao.com/20124545"
-          },
-          {
-            "name": "밥풀릭스 전북대점",
-            "url": "https://place.map.kakao.com/462659121"
-          },
-          {
-            "name": "밥풀릭스 모래내점",
-            "url": "https://place.map.kakao.com/736958551"
-          },
           {
             "name": "봉구스밥버거 전북대점",
             "url": "https://place.map.kakao.com/19532688"
@@ -582,8 +659,41 @@ export const foodCategories: FoodCategory[] = [
             "url": "https://place.map.kakao.com/831903211"
           },
           {
+            "name": "봉구스밥버거 진북인후점",
+            "url": "https://place.map.kakao.com/1710648814"
+          }
+        ]
+      },
+      {
+        "name": "그 외",
+        "restaurants": [
+          {
+            "name": "전통웰빙팥죽",
+            "url": "https://place.map.kakao.com/19644583"
+          },
+          {
+            "name": "모래내팥죽집",
+            "url": "https://place.map.kakao.com/26069758"
+          },
+          {
+            "name": "전주정든쌈밥",
+            "url": "https://place.map.kakao.com/1760828599"
+          },
+          {
+            "name": "러빙헛 서신점",
+            "url": "https://place.map.kakao.com/424564744"
+          },
+          {
             "name": "신밥도둑 덕진점",
             "url": "https://place.map.kakao.com/2131357918"
+          },
+          {
+            "name": "밥풀릭스 전북대점",
+            "url": "https://place.map.kakao.com/462659121"
+          },
+          {
+            "name": "밥풀릭스 모래내점",
+            "url": "https://place.map.kakao.com/736958551"
           },
           {
             "name": "뜰안에밥상",
@@ -598,370 +708,16 @@ export const foodCategories: FoodCategory[] = [
             "url": "https://place.map.kakao.com/25960437"
           },
           {
-            "name": "덮덮밥 전북전주인후점",
-            "url": "https://place.map.kakao.com/651285929"
-          },
-          {
             "name": "뜸들이다 전북대점",
             "url": "https://place.map.kakao.com/56185147"
           },
           {
-            "name": "전주정든쌈밥",
-            "url": "https://place.map.kakao.com/1760828599"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "양식",
-    "emoji": "🍝",
-    "subCategories": [
-      {
-        "name": "이탈리안",
-        "restaurants": [
-          {
-            "name": "은하별감파스타 전북대점",
-            "url": "https://place.map.kakao.com/1784922237"
+            "name": "마고가든",
+            "url": "https://place.map.kakao.com/10354681"
           },
           {
-            "name": "롤링파스타 전북대점",
-            "url": "https://place.map.kakao.com/1237944203"
-          },
-          {
-            "name": "제비파스타 전주전북대점",
-            "url": "https://place.map.kakao.com/1059577616"
-          },
-          {
-            "name": "파레스토랑",
-            "url": "https://place.map.kakao.com/360454149"
-          },
-          {
-            "name": "청춘파스타",
-            "url": "https://place.map.kakao.com/1815138855"
-          }
-        ]
-      },
-      {
-        "name": "일반",
-        "restaurants": [
-          {
-            "name": "뉴뉴키친",
-            "url": "https://place.map.kakao.com/1170089333"
-          },
-          {
-            "name": "팀 전북대점",
-            "url": "https://place.map.kakao.com/21288347"
-          },
-          {
-            "name": "팀레스토랑",
-            "url": "https://place.map.kakao.com/1591822112"
-          },
-          {
-            "name": "브디런",
-            "url": "https://place.map.kakao.com/1566668191"
-          },
-          {
-            "name": "언더그라운드",
-            "url": "https://place.map.kakao.com/1067202097"
-          },
-          {
-            "name": "카페트럼펫",
-            "url": "https://place.map.kakao.com/21222123"
-          },
-          {
-            "name": "치팅데이 전북대점",
-            "url": "https://place.map.kakao.com/452542069"
-          },
-          {
-            "name": "피르다브스",
-            "url": "https://place.map.kakao.com/1474178222"
-          },
-          {
-            "name": "하우스37",
-            "url": "https://place.map.kakao.com/1331304674"
-          },
-          {
-            "name": "아르블룸 레스토랑",
-            "url": "https://place.map.kakao.com/1037699375"
-          },
-          {
-            "name": "한끼 1인피자",
-            "url": "https://place.map.kakao.com/1389685050"
-          },
-          {
-            "name": "만강식당",
-            "url": "https://place.map.kakao.com/21502545"
-          },
-          {
-            "name": "맛있는음식",
-            "url": "https://place.map.kakao.com/35040157"
-          },
-          {
-            "name": "베리굿 본점",
-            "url": "https://place.map.kakao.com/1814134576"
-          }
-        ]
-      },
-      {
-        "name": "피자",
-        "restaurants": [
-          {
-            "name": "고피자 전북대점",
-            "url": "https://place.map.kakao.com/1775539719"
-          },
-          {
-            "name": "파파존스 전주점",
-            "url": "https://place.map.kakao.com/12118513"
-          },
-          {
-            "name": "지정환피자 전북대점",
-            "url": "https://place.map.kakao.com/8597674"
-          },
-          {
-            "name": "피자마루 전주전북대점",
-            "url": "https://place.map.kakao.com/1249373277"
-          },
-          {
-            "name": "피자닭터 전주2호점",
-            "url": "https://place.map.kakao.com/1674664701"
-          },
-          {
-            "name": "50엔드피자",
-            "url": "https://place.map.kakao.com/597856560"
-          },
-          {
-            "name": "피자의생명은치즈다 임연수점",
-            "url": "https://place.map.kakao.com/1664989065"
-          },
-          {
-            "name": "피자스쿨 전북대점",
-            "url": "https://place.map.kakao.com/17371971"
-          },
-          {
-            "name": "피자알볼로 전북대점",
-            "url": "https://place.map.kakao.com/18121252"
-          },
-          {
-            "name": "피나치공 전주금암점",
-            "url": "https://place.map.kakao.com/1053477916"
-          },
-          {
-            "name": "토핑몬스터피자 덕진점",
-            "url": "https://place.map.kakao.com/284517227"
-          },
-          {
-            "name": "투떠블피자 덕진금암점",
-            "url": "https://place.map.kakao.com/330867703"
-          },
-          {
-            "name": "도미노피자 전주금암점",
-            "url": "https://place.map.kakao.com/7832578"
-          },
-          {
-            "name": "맘스피자 전주시외버스터미널점",
-            "url": "https://place.map.kakao.com/1053888286"
-          },
-          {
-            "name": "피제이피자 전주덕진구점",
-            "url": "https://place.map.kakao.com/1226525558"
-          }
-        ]
-      },
-      {
-        "name": "햄버거",
-        "restaurants": [
-          {
-            "name": "왓더버거 전북대점",
-            "url": "https://place.map.kakao.com/1111596515"
-          },
-          {
-            "name": "코지버거",
-            "url": "https://place.map.kakao.com/2058333005"
-          },
-          {
-            "name": "버거피아 전북대점",
-            "url": "https://place.map.kakao.com/1918691555"
-          },
-          {
-            "name": "필라델피아",
-            "url": "https://place.map.kakao.com/1819234118"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "name": "일식",
-    "emoji": "🍣",
-    "subCategories": [
-      {
-        "name": "일본식라면",
-        "restaurants": [
-          {
-            "name": "산쪼메 전북대점",
-            "url": "https://place.map.kakao.com/1946705906"
-          },
-          {
-            "name": "치쿠린 전북대본점",
-            "url": "https://place.map.kakao.com/1090775435"
-          },
-          {
-            "name": "멘야케이 본점",
-            "url": "https://place.map.kakao.com/1048550547"
-          }
-        ]
-      },
-      {
-        "name": "초밥·롤",
-        "restaurants": [
-          {
-            "name": "도꾸이",
-            "url": "https://place.map.kakao.com/579026978"
-          },
-          {
-            "name": "무모한초밥 금암전북대점",
-            "url": "https://place.map.kakao.com/655645450"
-          },
-          {
-            "name": "롤리볼리 롯데백화점전주점",
-            "url": "https://place.map.kakao.com/1282389722"
-          }
-        ]
-      },
-      {
-        "name": "일반",
-        "restaurants": [
-          {
-            "name": "에그하우스",
-            "url": "https://place.map.kakao.com/949086418"
-          },
-          {
-            "name": "하나요리당고",
-            "url": "https://place.map.kakao.com/79828425"
-          },
-          {
-            "name": "만배식탁 전북대점",
-            "url": "https://place.map.kakao.com/30328574"
-          },
-          {
-            "name": "카츠호",
-            "url": "https://place.map.kakao.com/1730055000"
-          },
-          {
-            "name": "우마이",
-            "url": "https://place.map.kakao.com/440842642"
-          },
-          {
-            "name": "사이코우타코야끼 전북대점",
-            "url": "https://place.map.kakao.com/1944703733"
-          },
-          {
-            "name": "코요",
-            "url": "https://place.map.kakao.com/196446335"
-          },
-          {
-            "name": "코이누",
-            "url": "https://place.map.kakao.com/1374472667"
-          },
-          {
-            "name": "모퉁이 전북대점",
-            "url": "https://place.map.kakao.com/670538618"
-          },
-          {
-            "name": "금암소바",
-            "url": "https://place.map.kakao.com/16779100"
-          },
-          {
-            "name": "오늘도사시미 송천점",
-            "url": "https://place.map.kakao.com/1594764767"
-          },
-          {
-            "name": "더봉반 롯데백화점 전주점",
-            "url": "https://place.map.kakao.com/1478262628"
-          }
-        ]
-      },
-      {
-        "name": "돈까스·우동",
-        "restaurants": [
-          {
-            "name": "더담다 전북대본점",
-            "url": "https://place.map.kakao.com/196006365"
-          },
-          {
-            "name": "미소야 전북대점",
-            "url": "https://place.map.kakao.com/813281204"
-          },
-          {
-            "name": "역전우동0410 전북대점",
-            "url": "https://place.map.kakao.com/340277878"
-          },
-          {
-            "name": "먹짜 전북대본점",
-            "url": "https://place.map.kakao.com/24710017"
-          },
-          {
-            "name": "완산동까스",
-            "url": "https://place.map.kakao.com/1856066390"
-          },
-          {
-            "name": "료카츠",
-            "url": "https://place.map.kakao.com/1055494117"
-          },
-          {
-            "name": "요요키라멘",
-            "url": "https://place.map.kakao.com/1351133602"
-          },
-          {
-            "name": "제주쾅쾅돈가스 전주송천점",
-            "url": "https://place.map.kakao.com/1800725728"
-          },
-          {
-            "name": "미스카츠 롯데백화점전주점",
-            "url": "https://place.map.kakao.com/166206953"
-          },
-          {
-            "name": "돈까스짱 전주모래내점",
-            "url": "https://place.map.kakao.com/1567789667"
-          }
-        ]
-      },
-      {
-        "name": "참치회",
-        "restaurants": [
-          {
-            "name": "참치일번가 본점",
-            "url": "https://place.map.kakao.com/16546389"
-          },
-          {
-            "name": "붉은참치",
-            "url": "https://place.map.kakao.com/1656348862"
-          },
-          {
-            "name": "본참치 송천에코점",
-            "url": "https://place.map.kakao.com/1139459900"
-          }
-        ]
-      },
-      {
-        "name": "기타",
-        "restaurants": [
-          {
-            "name": "백소정 전북대점",
-            "url": "https://place.map.kakao.com/674270276"
-          },
-          {
-            "name": "치히로 전북대점",
-            "url": "https://place.map.kakao.com/2114589876"
-          },
-          {
-            "name": "강담",
-            "url": "https://place.map.kakao.com/21064820"
-          },
-          {
-            "name": "면식당 전북대점",
-            "url": "https://place.map.kakao.com/458606140"
+            "name": "가마골흑염소전문점",
+            "url": "https://place.map.kakao.com/16465631"
           }
         ]
       }
@@ -971,6 +727,48 @@ export const foodCategories: FoodCategory[] = [
     "name": "치킨",
     "emoji": "🍗",
     "subCategories": [
+      {
+        "name": "BHC치킨",
+        "restaurants": [
+          {
+            "name": "BHC치킨 전북대점",
+            "url": "https://place.map.kakao.com/1359191806"
+          },
+          {
+            "name": "BHC치킨 전주금암진북점",
+            "url": "https://place.map.kakao.com/26909655"
+          },
+          {
+            "name": "BHC치킨 덕진하가점",
+            "url": "https://place.map.kakao.com/1259855576"
+          },
+          {
+            "name": "BHC치킨 전주송천2호점",
+            "url": "https://place.map.kakao.com/27515484"
+          },
+          {
+            "name": "BHC치킨 전주서신점",
+            "url": "https://place.map.kakao.com/92050670"
+          }
+        ]
+      },
+      {
+        "name": "푸라닭치킨",
+        "restaurants": [
+          {
+            "name": "푸라닭치킨 전주전북대점",
+            "url": "https://place.map.kakao.com/151356817"
+          },
+          {
+            "name": "푸라닭치킨 전주송천점",
+            "url": "https://place.map.kakao.com/537211721"
+          },
+          {
+            "name": "푸라닭치킨 전주서곡하가점",
+            "url": "https://place.map.kakao.com/181167671"
+          }
+        ]
+      },
       {
         "name": "일반",
         "restaurants": [
@@ -1037,7 +835,104 @@ export const foodCategories: FoodCategory[] = [
         ]
       },
       {
-        "name": "기타",
+        "name": "BBQ",
+        "restaurants": [
+          {
+            "name": "BBQ 전주덕진점",
+            "url": "https://place.map.kakao.com/185004770"
+          },
+          {
+            "name": "BBQ 전북대점",
+            "url": "https://place.map.kakao.com/1998611730"
+          },
+          {
+            "name": "BBQ 전주하가지구점",
+            "url": "https://place.map.kakao.com/240452907"
+          },
+          {
+            "name": "BBQ 전주송천솔내점",
+            "url": "https://place.map.kakao.com/1802457368"
+          },
+          {
+            "name": "BBQ 전주백제대로점",
+            "url": "https://place.map.kakao.com/744095295"
+          }
+        ]
+      },
+      {
+        "name": "멕시카나치킨",
+        "restaurants": [
+          {
+            "name": "멕시카나치킨 전북대점",
+            "url": "https://place.map.kakao.com/1778641320"
+          },
+          {
+            "name": "멕시카나치킨 금암점",
+            "url": "https://place.map.kakao.com/7871934"
+          },
+          {
+            "name": "멕시카나치킨 송천에코점",
+            "url": "https://place.map.kakao.com/382476189"
+          },
+          {
+            "name": "멕시카나치킨 덕진하가점",
+            "url": "https://place.map.kakao.com/1856035228"
+          }
+        ]
+      },
+      {
+        "name": "충만치킨",
+        "restaurants": [
+          {
+            "name": "충만치킨 전주전북대점",
+            "url": "https://place.map.kakao.com/24904078"
+          },
+          {
+            "name": "충만치킨 진북점",
+            "url": "https://place.map.kakao.com/1340805240"
+          },
+          {
+            "name": "충만치킨 전주하가점",
+            "url": "https://place.map.kakao.com/26313051"
+          }
+        ]
+      },
+      {
+        "name": "교촌치킨",
+        "restaurants": [
+          {
+            "name": "교촌치킨 전북대점",
+            "url": "https://place.map.kakao.com/385055859"
+          },
+          {
+            "name": "교촌치킨 솔내점",
+            "url": "https://place.map.kakao.com/479574813"
+          },
+          {
+            "name": "교촌치킨 하가덕진점",
+            "url": "https://place.map.kakao.com/22965432"
+          }
+        ]
+      },
+      {
+        "name": "굽네치킨",
+        "restaurants": [
+          {
+            "name": "굽네치킨 전주덕진점",
+            "url": "https://place.map.kakao.com/415957572"
+          },
+          {
+            "name": "굽네치킨 덕진금암점",
+            "url": "https://place.map.kakao.com/8213547"
+          },
+          {
+            "name": "굽네치킨 전주진북점",
+            "url": "https://place.map.kakao.com/12578842"
+          }
+        ]
+      },
+      {
+        "name": "그 외",
         "restaurants": [
           {
             "name": "다사랑치킨피자 전북대점",
@@ -1048,56 +943,466 @@ export const foodCategories: FoodCategory[] = [
             "url": "https://place.map.kakao.com/26083274"
           },
           {
-            "name": "보드람치킨 전주서신점",
-            "url": "https://place.map.kakao.com/1659336688"
-          },
-          {
             "name": "불로만치킨바베큐 서신점",
             "url": "https://place.map.kakao.com/7903721"
           },
           {
-            "name": "BBQ 전주덕진점",
-            "url": "https://place.map.kakao.com/185004770"
+            "name": "누구나홀딱반한닭 전주서신점",
+            "url": "https://place.map.kakao.com/72055449"
           },
           {
-            "name": "BBQ 전북대점",
-            "url": "https://place.map.kakao.com/1998611730"
+            "name": "보드람치킨 전주서신점",
+            "url": "https://place.map.kakao.com/1659336688"
           },
           {
-            "name": "충만치킨 전주전북대점",
-            "url": "https://place.map.kakao.com/24904078"
+            "name": "가마치통닭 송천1호점",
+            "url": "https://place.map.kakao.com/450052261"
           },
           {
-            "name": "멕시카나치킨 전북대점",
-            "url": "https://place.map.kakao.com/1778641320"
-          },
-          {
-            "name": "멕시카나치킨 금암점",
-            "url": "https://place.map.kakao.com/7871934"
-          },
-          {
-            "name": "치킨마루 전북대점",
-            "url": "https://place.map.kakao.com/2052277079"
-          },
-          {
-            "name": "교촌치킨 전북대점",
-            "url": "https://place.map.kakao.com/385055859"
-          },
-          {
-            "name": "교촌치킨 솔내점",
-            "url": "https://place.map.kakao.com/479574813"
+            "name": "가마치통닭 전주하가점",
+            "url": "https://place.map.kakao.com/209221237"
           },
           {
             "name": "기영이숯불두마리치킨 전북대점",
             "url": "https://place.map.kakao.com/642443350"
           },
           {
-            "name": "굽네치킨 전주덕진점",
-            "url": "https://place.map.kakao.com/415957572"
+            "name": "치킨마루 전북대점",
+            "url": "https://place.map.kakao.com/2052277079"
           },
           {
-            "name": "굽네치킨 덕진금암점",
-            "url": "https://place.map.kakao.com/8213547"
+            "name": "지코바 덕진1호점",
+            "url": "https://place.map.kakao.com/118870630"
+          },
+          {
+            "name": "맥시칸치킨 금암점",
+            "url": "https://place.map.kakao.com/21347216"
+          },
+          {
+            "name": "맥시칸치킨 진북점",
+            "url": "https://place.map.kakao.com/17693444"
+          },
+          {
+            "name": "호식이두마리치킨 전북대점",
+            "url": "https://place.map.kakao.com/11664024"
+          },
+          {
+            "name": "호식이두마리치킨 전주진북점",
+            "url": "https://place.map.kakao.com/13640953"
+          },
+          {
+            "name": "또봉이통닭 전북전주진북점",
+            "url": "https://place.map.kakao.com/26396159"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "일식",
+    "emoji": "🍣",
+    "subCategories": [
+      {
+        "name": "참치회",
+        "restaurants": [
+          {
+            "name": "참치일번가 본점",
+            "url": "https://place.map.kakao.com/16546389"
+          },
+          {
+            "name": "붉은참치",
+            "url": "https://place.map.kakao.com/1656348862"
+          },
+          {
+            "name": "본참치 송천에코점",
+            "url": "https://place.map.kakao.com/1139459900"
+          },
+          {
+            "name": "달빛참치 본점",
+            "url": "https://place.map.kakao.com/1267477350"
+          },
+          {
+            "name": "하가본참치",
+            "url": "https://place.map.kakao.com/2106518929"
+          },
+          {
+            "name": "본참치",
+            "url": "https://place.map.kakao.com/911266217"
+          }
+        ]
+      },
+      {
+        "name": "초밥·롤",
+        "restaurants": [
+          {
+            "name": "도꾸이",
+            "url": "https://place.map.kakao.com/579026978"
+          },
+          {
+            "name": "무모한초밥 금암전북대점",
+            "url": "https://place.map.kakao.com/655645450"
+          },
+          {
+            "name": "롤리볼리 롯데백화점전주점",
+            "url": "https://place.map.kakao.com/1282389722"
+          },
+          {
+            "name": "준스시",
+            "url": "https://place.map.kakao.com/1619535271"
+          },
+          {
+            "name": "본스시",
+            "url": "https://place.map.kakao.com/813544876"
+          },
+          {
+            "name": "정직유부 전주송천점",
+            "url": "https://place.map.kakao.com/1809066112"
+          }
+        ]
+      },
+      {
+        "name": "일반",
+        "restaurants": [
+          {
+            "name": "에그하우스",
+            "url": "https://place.map.kakao.com/949086418"
+          },
+          {
+            "name": "하나요리당고",
+            "url": "https://place.map.kakao.com/79828425"
+          },
+          {
+            "name": "만배식탁 전북대점",
+            "url": "https://place.map.kakao.com/30328574"
+          },
+          {
+            "name": "카츠호",
+            "url": "https://place.map.kakao.com/1730055000"
+          },
+          {
+            "name": "우마이",
+            "url": "https://place.map.kakao.com/440842642"
+          },
+          {
+            "name": "사이코우타코야끼 전북대점",
+            "url": "https://place.map.kakao.com/1944703733"
+          },
+          {
+            "name": "코요",
+            "url": "https://place.map.kakao.com/196446335"
+          },
+          {
+            "name": "코이누",
+            "url": "https://place.map.kakao.com/1374472667"
+          },
+          {
+            "name": "모퉁이 전북대점",
+            "url": "https://place.map.kakao.com/670538618"
+          },
+          {
+            "name": "금암소바",
+            "url": "https://place.map.kakao.com/16779100"
+          },
+          {
+            "name": "오늘도사시미 송천점",
+            "url": "https://place.map.kakao.com/1594764767"
+          },
+          {
+            "name": "더봉반 롯데백화점 전주점",
+            "url": "https://place.map.kakao.com/1478262628"
+          },
+          {
+            "name": "마시루",
+            "url": "https://place.map.kakao.com/1927935160"
+          }
+        ]
+      },
+      {
+        "name": "돈까스·우동",
+        "restaurants": [
+          {
+            "name": "더담다 전북대본점",
+            "url": "https://place.map.kakao.com/196006365"
+          },
+          {
+            "name": "미소야 전북대점",
+            "url": "https://place.map.kakao.com/813281204"
+          },
+          {
+            "name": "역전우동0410 전북대점",
+            "url": "https://place.map.kakao.com/340277878"
+          },
+          {
+            "name": "먹짜 전북대본점",
+            "url": "https://place.map.kakao.com/24710017"
+          },
+          {
+            "name": "완산동까스",
+            "url": "https://place.map.kakao.com/1856066390"
+          },
+          {
+            "name": "료카츠",
+            "url": "https://place.map.kakao.com/1055494117"
+          },
+          {
+            "name": "요요키라멘",
+            "url": "https://place.map.kakao.com/1351133602"
+          },
+          {
+            "name": "제주쾅쾅돈가스 전주송천점",
+            "url": "https://place.map.kakao.com/1800725728"
+          },
+          {
+            "name": "미스카츠 롯데백화점전주점",
+            "url": "https://place.map.kakao.com/166206953"
+          },
+          {
+            "name": "돈까스짱 송천점",
+            "url": "https://place.map.kakao.com/615592562"
+          },
+          {
+            "name": "정성카츠 전주덕진점",
+            "url": "https://place.map.kakao.com/1217433810"
+          },
+          {
+            "name": "홍대돈까스",
+            "url": "https://place.map.kakao.com/26322749"
+          },
+          {
+            "name": "하루하루",
+            "url": "https://place.map.kakao.com/1587857119"
+          },
+          {
+            "name": "바삭한식탁",
+            "url": "https://place.map.kakao.com/836407824"
+          }
+        ]
+      },
+      {
+        "name": "일본식라면",
+        "restaurants": [
+          {
+            "name": "산쪼메 전북대점",
+            "url": "https://place.map.kakao.com/1946705906"
+          },
+          {
+            "name": "치쿠린 전북대본점",
+            "url": "https://place.map.kakao.com/1090775435"
+          },
+          {
+            "name": "멘야케이 본점",
+            "url": "https://place.map.kakao.com/1048550547"
+          },
+          {
+            "name": "히노아지 전주하가점",
+            "url": "https://place.map.kakao.com/1500650027"
+          }
+        ]
+      },
+      {
+        "name": "일식집",
+        "restaurants": [
+          {
+            "name": "치히로 전북대점",
+            "url": "https://place.map.kakao.com/2114589876"
+          },
+          {
+            "name": "강담",
+            "url": "https://place.map.kakao.com/21064820"
+          },
+          {
+            "name": "옥천일식",
+            "url": "https://place.map.kakao.com/16665396"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "양식",
+    "emoji": "🍝",
+    "subCategories": [
+      {
+        "name": "일반",
+        "restaurants": [
+          {
+            "name": "뉴뉴키친",
+            "url": "https://place.map.kakao.com/1170089333"
+          },
+          {
+            "name": "팀 전북대점",
+            "url": "https://place.map.kakao.com/21288347"
+          },
+          {
+            "name": "팀레스토랑",
+            "url": "https://place.map.kakao.com/1591822112"
+          },
+          {
+            "name": "브디런",
+            "url": "https://place.map.kakao.com/1566668191"
+          },
+          {
+            "name": "언더그라운드",
+            "url": "https://place.map.kakao.com/1067202097"
+          },
+          {
+            "name": "카페트럼펫",
+            "url": "https://place.map.kakao.com/21222123"
+          },
+          {
+            "name": "치팅데이 전북대점",
+            "url": "https://place.map.kakao.com/452542069"
+          },
+          {
+            "name": "피르다브스",
+            "url": "https://place.map.kakao.com/1474178222"
+          },
+          {
+            "name": "하우스37",
+            "url": "https://place.map.kakao.com/1331304674"
+          },
+          {
+            "name": "아르블룸 레스토랑",
+            "url": "https://place.map.kakao.com/1037699375"
+          },
+          {
+            "name": "한끼 1인피자",
+            "url": "https://place.map.kakao.com/1389685050"
+          },
+          {
+            "name": "만강식당",
+            "url": "https://place.map.kakao.com/21502545"
+          },
+          {
+            "name": "맛있는음식",
+            "url": "https://place.map.kakao.com/35040157"
+          },
+          {
+            "name": "블랙팬다이너",
+            "url": "https://place.map.kakao.com/1789591805"
+          },
+          {
+            "name": "부부파스타",
+            "url": "https://place.map.kakao.com/27403406"
+          }
+        ]
+      },
+      {
+        "name": "이탈리안",
+        "restaurants": [
+          {
+            "name": "은하별감파스타 전북대점",
+            "url": "https://place.map.kakao.com/1784922237"
+          },
+          {
+            "name": "롤링파스타 전북대점",
+            "url": "https://place.map.kakao.com/1237944203"
+          },
+          {
+            "name": "제비파스타 전주전북대점",
+            "url": "https://place.map.kakao.com/1059577616"
+          },
+          {
+            "name": "파레스토랑",
+            "url": "https://place.map.kakao.com/360454149"
+          },
+          {
+            "name": "청춘파스타",
+            "url": "https://place.map.kakao.com/1815138855"
+          }
+        ]
+      },
+      {
+        "name": "피자",
+        "restaurants": [
+          {
+            "name": "고피자 전북대점",
+            "url": "https://place.map.kakao.com/1775539719"
+          },
+          {
+            "name": "파파존스 전주점",
+            "url": "https://place.map.kakao.com/12118513"
+          },
+          {
+            "name": "지정환피자 전북대점",
+            "url": "https://place.map.kakao.com/8597674"
+          },
+          {
+            "name": "피자마루 전주전북대점",
+            "url": "https://place.map.kakao.com/1249373277"
+          },
+          {
+            "name": "피자닭터 전주2호점",
+            "url": "https://place.map.kakao.com/1674664701"
+          },
+          {
+            "name": "50엔드피자",
+            "url": "https://place.map.kakao.com/597856560"
+          },
+          {
+            "name": "피자의생명은치즈다 임연수점",
+            "url": "https://place.map.kakao.com/1664989065"
+          },
+          {
+            "name": "피자스쿨 전북대점",
+            "url": "https://place.map.kakao.com/17371971"
+          },
+          {
+            "name": "피자알볼로 전북대점",
+            "url": "https://place.map.kakao.com/18121252"
+          },
+          {
+            "name": "피나치공 전주금암점",
+            "url": "https://place.map.kakao.com/1053477916"
+          },
+          {
+            "name": "토핑몬스터피자 덕진점",
+            "url": "https://place.map.kakao.com/284517227"
+          },
+          {
+            "name": "투떠블피자 덕진금암점",
+            "url": "https://place.map.kakao.com/330867703"
+          },
+          {
+            "name": "도미노피자 전주금암점",
+            "url": "https://place.map.kakao.com/7832578"
+          },
+          {
+            "name": "맘스피자 전주시외버스터미널점",
+            "url": "https://place.map.kakao.com/1053888286"
+          },
+          {
+            "name": "피자먹다 덕진점",
+            "url": "https://place.map.kakao.com/579040232"
+          }
+        ]
+      },
+      {
+        "name": "햄버거",
+        "restaurants": [
+          {
+            "name": "왓더버거 전북대점",
+            "url": "https://place.map.kakao.com/1111596515"
+          },
+          {
+            "name": "코지버거",
+            "url": "https://place.map.kakao.com/2058333005"
+          },
+          {
+            "name": "버거피아 전북대점",
+            "url": "https://place.map.kakao.com/1918691555"
+          },
+          {
+            "name": "필라델피아",
+            "url": "https://place.map.kakao.com/1819234118"
+          },
+          {
+            "name": "프랭크버거 송천점",
+            "url": "https://place.map.kakao.com/682752089"
+          },
+          {
+            "name": "BT버거앤타코 전주송천점",
+            "url": "https://place.map.kakao.com/565681282"
           }
         ]
       }
@@ -1202,11 +1507,31 @@ export const foodCategories: FoodCategory[] = [
           {
             "name": "비비떡볶이 금암HQ",
             "url": "https://place.map.kakao.com/2088335059"
+          },
+          {
+            "name": "감탄떡볶이 송천3호점",
+            "url": "https://place.map.kakao.com/355333363"
+          },
+          {
+            "name": "배떡 송천점",
+            "url": "https://place.map.kakao.com/297877699"
+          },
+          {
+            "name": "33떡볶이 전주하가점",
+            "url": "https://place.map.kakao.com/571478888"
+          },
+          {
+            "name": "곱떡치떡 전주서신점",
+            "url": "https://place.map.kakao.com/153313884"
+          },
+          {
+            "name": "우리할매떡볶이 전주송천점",
+            "url": "https://place.map.kakao.com/1855722960"
           }
         ]
       },
       {
-        "name": "기타",
+        "name": "그 외",
         "restaurants": [
           {
             "name": "신포우리만두 전주터미널점",
@@ -1225,8 +1550,8 @@ export const foodCategories: FoodCategory[] = [
             "url": "https://place.map.kakao.com/983242639"
           },
           {
-            "name": "삼첩분식 전주인후점",
-            "url": "https://place.map.kakao.com/1998546554"
+            "name": "배터지는생동까스 송천점",
+            "url": "https://place.map.kakao.com/776325372"
           }
         ]
       }
@@ -1236,6 +1561,31 @@ export const foodCategories: FoodCategory[] = [
     "name": "중식",
     "emoji": "🥟",
     "subCategories": [
+      {
+        "name": "일반",
+        "restaurants": [
+          {
+            "name": "포차모닥불",
+            "url": "https://place.map.kakao.com/2107146372"
+          },
+          {
+            "name": "요히",
+            "url": "https://place.map.kakao.com/1062635378"
+          },
+          {
+            "name": "소소",
+            "url": "https://place.map.kakao.com/1833970152"
+          },
+          {
+            "name": "황소반점 하가점",
+            "url": "https://place.map.kakao.com/1093448808"
+          },
+          {
+            "name": "달밤중화포차",
+            "url": "https://place.map.kakao.com/1176483290"
+          }
+        ]
+      },
       {
         "name": "중국요리",
         "restaurants": [
@@ -1300,21 +1650,106 @@ export const foodCategories: FoodCategory[] = [
             "url": "https://place.map.kakao.com/68686347"
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    "name": "패스트푸드",
+    "emoji": "🍔",
+    "subCategories": [
       {
-        "name": "일반",
+        "name": "롯데리아",
         "restaurants": [
           {
-            "name": "포차모닥불",
-            "url": "https://place.map.kakao.com/2107146372"
+            "name": "롯데리아 전북대점",
+            "url": "https://place.map.kakao.com/2131250554"
           },
           {
-            "name": "요히",
-            "url": "https://place.map.kakao.com/1062635378"
+            "name": "롯데리아 전주하가D/I점",
+            "url": "https://place.map.kakao.com/164443395"
           },
           {
-            "name": "소소",
-            "url": "https://place.map.kakao.com/1833970152"
+            "name": "롯데리아 전주서신점",
+            "url": "https://place.map.kakao.com/8359104"
+          }
+        ]
+      },
+      {
+        "name": "샌드위치",
+        "restaurants": [
+          {
+            "name": "유스샌드위치 전주점",
+            "url": "https://place.map.kakao.com/1054477438"
+          },
+          {
+            "name": "어반핑거",
+            "url": "https://place.map.kakao.com/1422650193"
+          },
+          {
+            "name": "쌈쌘 전북대본점",
+            "url": "https://place.map.kakao.com/1828877835"
+          },
+          {
+            "name": "써브웨이 전주전북대점",
+            "url": "https://place.map.kakao.com/1827443017"
+          },
+          {
+            "name": "더블치즈",
+            "url": "https://place.map.kakao.com/424583359"
+          },
+          {
+            "name": "뚱땡이 샌드위치",
+            "url": "https://place.map.kakao.com/1504071465"
+          },
+          {
+            "name": "오샌드",
+            "url": "https://place.map.kakao.com/212255791"
+          },
+          {
+            "name": "에그2000 전주송천점",
+            "url": "https://place.map.kakao.com/1051118070"
+          }
+        ]
+      },
+      {
+        "name": "맘스터치",
+        "restaurants": [
+          {
+            "name": "맘스터치 전북대점",
+            "url": "https://place.map.kakao.com/22707007"
+          },
+          {
+            "name": "맘스터치 전주금암점",
+            "url": "https://place.map.kakao.com/13312355"
+          },
+          {
+            "name": "맘스터치 전주시외버스터미널점",
+            "url": "https://place.map.kakao.com/1285058025"
+          }
+        ]
+      },
+      {
+        "name": "그 외",
+        "restaurants": [
+          {
+            "name": "명랑핫도그 전주송천점",
+            "url": "https://place.map.kakao.com/2051392258"
+          },
+          {
+            "name": "명랑핫도그 전주하가점",
+            "url": "https://place.map.kakao.com/865909079"
+          },
+          {
+            "name": "맥도날드 전주덕진DT점",
+            "url": "https://place.map.kakao.com/22401534"
+          },
+          {
+            "name": "맥도날드 전주인후DT점",
+            "url": "https://place.map.kakao.com/22272689"
+          },
+          {
+            "name": "버거킹 전북대점",
+            "url": "https://place.map.kakao.com/446771385"
           }
         ]
       }
@@ -1346,6 +1781,10 @@ export const foodCategories: FoodCategory[] = [
           {
             "name": "씬짜오",
             "url": "https://place.map.kakao.com/1915946887"
+          },
+          {
+            "name": "999타이",
+            "url": "https://place.map.kakao.com/64075052"
           }
         ]
       },
@@ -1375,11 +1814,19 @@ export const foodCategories: FoodCategory[] = [
           {
             "name": "소담식탁",
             "url": "https://place.map.kakao.com/676094383"
+          },
+          {
+            "name": "소담137 송천점",
+            "url": "https://place.map.kakao.com/1241441556"
+          },
+          {
+            "name": "월남쌈이맛있는아라쌈 송천에코점",
+            "url": "https://place.map.kakao.com/1247612408"
           }
         ]
       },
       {
-        "name": "기타",
+        "name": "그 외",
         "restaurants": [
           {
             "name": "와우케밥치킨",
@@ -1402,144 +1849,48 @@ export const foodCategories: FoodCategory[] = [
     ]
   },
   {
-    "name": "패스트푸드",
-    "emoji": "🍔",
-    "subCategories": [
-      {
-        "name": "맘스터치",
-        "restaurants": [
-          {
-            "name": "맘스터치 전북대점",
-            "url": "https://place.map.kakao.com/22707007"
-          },
-          {
-            "name": "맘스터치 전주금암점",
-            "url": "https://place.map.kakao.com/13312355"
-          },
-          {
-            "name": "맘스터치 전주시외버스터미널점",
-            "url": "https://place.map.kakao.com/1285058025"
-          }
-        ]
-      },
-      {
-        "name": "샌드위치",
-        "restaurants": [
-          {
-            "name": "유스샌드위치 전주점",
-            "url": "https://place.map.kakao.com/1054477438"
-          },
-          {
-            "name": "어반핑거",
-            "url": "https://place.map.kakao.com/1422650193"
-          },
-          {
-            "name": "쌈쌘 전북대본점",
-            "url": "https://place.map.kakao.com/1828877835"
-          },
-          {
-            "name": "써브웨이 전주전북대점",
-            "url": "https://place.map.kakao.com/1827443017"
-          },
-          {
-            "name": "더블치즈",
-            "url": "https://place.map.kakao.com/424583359"
-          },
-          {
-            "name": "뚱땡이 샌드위치",
-            "url": "https://place.map.kakao.com/1504071465"
-          }
-        ]
-      },
-      {
-        "name": "기타",
-        "restaurants": [
-          {
-            "name": "롯데리아 전북대점",
-            "url": "https://place.map.kakao.com/2131250554"
-          },
-          {
-            "name": "버거킹 전북대점",
-            "url": "https://place.map.kakao.com/446771385"
-          },
-          {
-            "name": "맥도날드 전주덕진DT점",
-            "url": "https://place.map.kakao.com/22401534"
-          },
-          {
-            "name": "맥도날드 전주인후DT점",
-            "url": "https://place.map.kakao.com/22272689"
-          }
-        ]
-      }
-    ]
-  },
-  {
     "name": "기타",
     "emoji": "🍽️",
     "subCategories": [
       {
-        "name": "간식",
+        "name": "샤브샤브",
         "restaurants": [
           {
-            "name": "더드림",
-            "url": "https://place.map.kakao.com/1305148533"
+            "name": "샤브온당 전북대점",
+            "url": "https://place.map.kakao.com/1211247686"
           },
           {
-            "name": "배스킨라빈스 전북대점",
-            "url": "https://place.map.kakao.com/10396073"
+            "name": "하루샤브",
+            "url": "https://place.map.kakao.com/1827252627"
           },
           {
-            "name": "파리바게뜨 전북대점",
-            "url": "https://place.map.kakao.com/10884114"
+            "name": "일공공샤브&편백찜 전주송천점",
+            "url": "https://place.map.kakao.com/2072555611"
           },
           {
-            "name": "우노스베이커리",
-            "url": "https://place.map.kakao.com/1399215768"
+            "name": "채선당PLUS 전주서신점",
+            "url": "https://place.map.kakao.com/25813616"
+          }
+        ]
+      },
+      {
+        "name": "구내식당",
+        "restaurants": [
+          {
+            "name": "전북대학교 진수원식당",
+            "url": "https://place.map.kakao.com/18647920"
           },
           {
-            "name": "전주생화케이크 더키플라워 전북대점",
-            "url": "https://place.map.kakao.com/1006777144"
+            "name": "전북대학교 의과대학 학생식당",
+            "url": "https://place.map.kakao.com/1377388589"
           },
           {
-            "name": "오늘나의케이크",
-            "url": "https://place.map.kakao.com/174103372"
+            "name": "본우리집밥 이마트전주점",
+            "url": "https://place.map.kakao.com/1757115363"
           },
           {
-            "name": "네오다닭강정",
-            "url": "https://place.map.kakao.com/1851241749"
-          },
-          {
-            "name": "버블망고 전북대점",
-            "url": "https://place.map.kakao.com/829041133"
-          },
-          {
-            "name": "풍년제과 전북대점",
-            "url": "https://place.map.kakao.com/465422894"
-          },
-          {
-            "name": "치즈네",
-            "url": "https://place.map.kakao.com/1568999715"
-          },
-          {
-            "name": "층층제과",
-            "url": "https://place.map.kakao.com/269959096"
-          },
-          {
-            "name": "모니케이크",
-            "url": "https://place.map.kakao.com/1443751579"
-          },
-          {
-            "name": "오리과자점",
-            "url": "https://place.map.kakao.com/1893094164"
-          },
-          {
-            "name": "빵집오빠 금암점",
-            "url": "https://place.map.kakao.com/996126771"
-          },
-          {
-            "name": "소규모치즈케이크공장",
-            "url": "https://place.map.kakao.com/2044829509"
+            "name": "전주고용복지플러스센터 구내식당",
+            "url": "https://place.map.kakao.com/1852662676"
           }
         ]
       },
@@ -1581,51 +1932,14 @@ export const foodCategories: FoodCategory[] = [
           {
             "name": "본죽&비빔밥cafe 전주롯데점",
             "url": "https://place.map.kakao.com/22299243"
-          }
-        ]
-      },
-      {
-        "name": "기타",
-        "restaurants": [
-          {
-            "name": "해피메스",
-            "url": "https://place.map.kakao.com/901919916"
           },
           {
-            "name": "이삭토스트 전주전북대점",
-            "url": "https://place.map.kakao.com/946293118"
+            "name": "본죽&비빔밥cafe 전주송천점",
+            "url": "https://place.map.kakao.com/22733780"
           },
           {
-            "name": "부대찌개대사관 전주전북대점",
-            "url": "https://place.map.kakao.com/272101340"
-          },
-          {
-            "name": "반도",
-            "url": "https://place.map.kakao.com/1717463511"
-          },
-          {
-            "name": "엄마손맛집",
-            "url": "https://place.map.kakao.com/909909999"
-          },
-          {
-            "name": "복담",
-            "url": "https://place.map.kakao.com/760826112"
-          },
-          {
-            "name": "에덴식당",
-            "url": "https://place.map.kakao.com/1953316342"
-          },
-          {
-            "name": "더블유지푸드",
-            "url": "https://place.map.kakao.com/1081854605"
-          },
-          {
-            "name": "공육상돌판바베큐",
-            "url": "https://place.map.kakao.com/251052472"
-          },
-          {
-            "name": "오마카툰북카페",
-            "url": "https://place.map.kakao.com/1428519568"
+            "name": "본죽&비빔밥cafe 전주하가점",
+            "url": "https://place.map.kakao.com/18622170"
           }
         ]
       },
@@ -1671,23 +1985,26 @@ export const foodCategories: FoodCategory[] = [
           {
             "name": "담은한끼",
             "url": "https://place.map.kakao.com/755910826"
-          }
-        ]
-      },
-      {
-        "name": "샤브샤브",
-        "restaurants": [
-          {
-            "name": "샤브온당 전북대점",
-            "url": "https://place.map.kakao.com/1211247686"
           },
           {
-            "name": "하루샤브",
-            "url": "https://place.map.kakao.com/1827252627"
+            "name": "주디키친",
+            "url": "https://place.map.kakao.com/1937524626"
           },
           {
-            "name": "일공공샤브&편백찜 전주송천점",
-            "url": "https://place.map.kakao.com/2072555611"
+            "name": "푸드박스 전주점",
+            "url": "https://place.map.kakao.com/105114757"
+          },
+          {
+            "name": "오우리",
+            "url": "https://place.map.kakao.com/468886487"
+          },
+          {
+            "name": "온밥 전주점",
+            "url": "https://place.map.kakao.com/257068532"
+          },
+          {
+            "name": "한솥도시락 전주송천점",
+            "url": "https://place.map.kakao.com/27207937"
           }
         ]
       },
@@ -1713,11 +2030,15 @@ export const foodCategories: FoodCategory[] = [
           {
             "name": "그린데이샐러드",
             "url": "https://place.map.kakao.com/1207755905"
+          },
+          {
+            "name": "잇모닝",
+            "url": "https://place.map.kakao.com/611722469"
           }
         ]
       },
       {
-        "name": "기타",
+        "name": "뷔페",
         "restaurants": [
           {
             "name": "에비뉴한식뷔페",
@@ -1728,32 +2049,12 @@ export const foodCategories: FoodCategory[] = [
             "url": "https://place.map.kakao.com/1864216553"
           },
           {
-            "name": "로꼬꼬111",
-            "url": "https://place.map.kakao.com/2107273648"
+            "name": "하가뷔페",
+            "url": "https://place.map.kakao.com/27400717"
           },
           {
-            "name": "노리터야식",
-            "url": "https://place.map.kakao.com/1508676995"
-          },
-          {
-            "name": "전북대학교 진수원식당",
-            "url": "https://place.map.kakao.com/18647920"
-          },
-          {
-            "name": "전북대학교 의과대학 학생식당",
-            "url": "https://place.map.kakao.com/1377388589"
-          },
-          {
-            "name": "옳온푸드코트 전북대병원점",
-            "url": "https://place.map.kakao.com/1772123079"
-          },
-          {
-            "name": "동물원 푸드코트",
-            "url": "https://place.map.kakao.com/1382251606"
-          },
-          {
-            "name": "픽미픽미아이스 전주인후점",
-            "url": "https://place.map.kakao.com/267919876"
+            "name": "성락한식뷔페",
+            "url": "https://place.map.kakao.com/115433679"
           }
         ]
       }
