@@ -1,0 +1,27 @@
+/**
+ * [전역 스타일] index.css
+ * 전체 앱에 적용되는 리셋과 기본 폰트/배경 설정입니다.
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Jua', 'Black Han Sans', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+  background: radial-gradient(ellipse at 50% -20%, #3b1657 0%, #1b0b30 45%, #0d051a 100%);
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+}
