@@ -1,0 +1,52 @@
+/**
+ * [컴포넌트 스타일] CategoryPicker.css
+ * 음식 종류 선택 칩 버튼 줄의 스타일입니다.
+ */
+.category-picker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.category-picker__chip {
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 215, 100, 0.45);
+  background: rgba(0, 0, 0, 0.28);
+  color: #ffd9a8;
+  font-size: 14px;
+  cursor: pointer;
+  transition:
+    transform 0.12s ease,
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.category-picker__chip:hover:not(:disabled) {
+  transform: translateY(-2px);
+  border-color: #ffdf7e;
+}
+
+.category-picker__chip.is-active {
+  background: linear-gradient(180deg, #ffdf7e, #e8a93d);
+  border-color: #fff3c4;
+  color: #4a2a00;
+  box-shadow: 0 0 12px rgba(255, 210, 90, 0.55);
+}
+
+.category-picker__chip:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 640px) {
+  .category-picker {
+    gap: 6px;
+  }
+  .category-picker__chip {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}

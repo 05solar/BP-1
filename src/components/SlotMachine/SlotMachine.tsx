@@ -9,6 +9,7 @@ import { useRef, useState } from 'react'
 import SlotReel from '../SlotReel/SlotReel'
 import Lever from '../Lever/Lever'
 import ResultBoard from '../ResultBoard/ResultBoard'
+import CategoryPicker from '../CategoryPicker/CategoryPicker'
 import {
   foodCategories,
   allSubCategoryNames,
@@ -37,13 +38,16 @@ export default function SlotMachine() {
   const [phase, setPhase] = useState<Phase>('idle')
   const [spinId, setSpinId] = useState(0)
   const [picks, setPicks] = useState<Picks | null>(null)
+  /** 사용자가 고른 음식 종류 (null = 완전 랜덤) */
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
   const stoppedCount = useRef(0)
 
   const categoryNames = foodCategories.map((c) => c.name)
 
   const spin = () => {
     if (phase === 'spinning') return
-    const category = randomOf(foodCategories)
+    const category =
+      foodCategories.find((c) => c.name === selectedCategory) ?? randomOf(foodCategories)
     const sub = randomOf(category.subCategories)
     const restaurant = randomOf(sub.restaurants)
     setPicks({
@@ -73,6 +77,14 @@ export default function SlotMachine() {
         </div>
         <h2 className="slot-machine__title">🎰 LUNCH JACKPOT 🎰</h2>
       </div>
+
+      {/* 음식 종류 선택 (완전 랜덤 / 직접 선택) */}
+      <CategoryPicker
+        categories={foodCategories}
+        selected={selectedCategory}
+        disabled={phase === 'spinning'}
+        onSelect={setSelectedCategory}
+      />
 
       {/* 릴 + 레버 */}
       <div className="slot-machine__body">
