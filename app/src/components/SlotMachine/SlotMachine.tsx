@@ -119,7 +119,7 @@ export default function SlotMachine() {
             <span className="slot-machine__payline-arrow right">◀</span>
           </div>
         </div>
-        <Lever disabled={phase === 'spinning'} onPull={spin} />
+        <Lever disabled={phase === 'spinning'} onPull={spin} showHint={spinId === 0} />
       </div>
 
       <p className="slot-machine__hint">

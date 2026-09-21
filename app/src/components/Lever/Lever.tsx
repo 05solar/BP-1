@@ -11,9 +11,11 @@ interface LeverProps {
   disabled: boolean
   /** 레버를 당겼을 때 호출 */
   onPull: () => void
+  /** 첫 스핀 전에만 true — PUSH! 안내 힌트 표시 */
+  showHint?: boolean
 }
 
-export default function Lever({ disabled, onPull }: LeverProps) {
+export default function Lever({ disabled, onPull, showHint = false }: LeverProps) {
   const [pulled, setPulled] = useState(false)
 
   const pull = () => {
@@ -31,6 +33,16 @@ export default function Lever({ disabled, onPull }: LeverProps) {
       disabled={disabled}
       aria-label="슬롯머신 레버 당기기"
     >
+      {showHint && (
+        <span className="lever__hint" aria-hidden="true">
+          <span className="lever__hint-text">PUSH!</span>
+          <span className="lever__hint-arrows">
+            <span>❮</span>
+            <span>❮</span>
+            <span>❮</span>
+          </span>
+        </span>
+      )}
       <span className="lever__slot-track" />
       <span className="lever__arm">
         <span className="lever__stick" />
