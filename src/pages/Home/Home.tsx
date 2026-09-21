@@ -10,10 +10,6 @@ export default function Home() {
   return (
     <main className="home">
       <SlotMachine />
-
-      <footer className="home__footer">
-        식당 목록은 <code>src/data/menuData.ts</code>에서 자유롭게 수정할 수 있어요.
-      </footer>
     </main>
   )
 }
