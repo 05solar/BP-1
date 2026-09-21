@@ -12,36 +12,6 @@
   padding: 40px 16px 60px;
 }
 
-.home__header {
-  text-align: center;
-}
-
-.home__title {
-  font-family: 'Black Han Sans', 'Jua', sans-serif;
-  font-size: 44px;
-  background: linear-gradient(180deg, #fff3c4, #ffc93d 60%, #ff8a3d);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter: drop-shadow(0 0 16px rgba(255, 190, 60, 0.55));
-  animation: title-float 2.6s ease-in-out infinite alternate;
-}
-
-@keyframes title-float {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-6px);
-  }
-}
-
-.home__subtitle {
-  margin-top: 8px;
-  font-size: 17px;
-  color: #cbb3ff;
-}
-
 .home__footer {
   font-size: 13px;
   color: #8f7bb8;
@@ -54,11 +24,3 @@
   border-radius: 6px;
 }
 
-@media (max-width: 640px) {
-  .home__title {
-    font-size: 31px;
-  }
-  .home__subtitle {
-    font-size: 14px;
-  }
-}
