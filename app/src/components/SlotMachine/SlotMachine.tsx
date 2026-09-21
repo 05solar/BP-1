@@ -38,16 +38,25 @@ export default function SlotMachine() {
   const [phase, setPhase] = useState<Phase>('idle')
   const [spinId, setSpinId] = useState(0)
   const [picks, setPicks] = useState<Picks | null>(null)
-  /** 사용자가 고른 음식 종류 (null = 완전 랜덤) */
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null)
+  /** 사용자가 고른 음식 종류 목록 (빈 배열 = 완전 랜덤) */
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([])
   const stoppedCount = useRef(0)
 
   const categoryNames = foodCategories.map((c) => c.name)
 
+  const toggleCategory = (name: string) => {
+    setSelectedCategories((prev) =>
+      prev.includes(name) ? prev.filter((n) => n !== name) : [...prev, name],
+    )
+  }
+
   const spin = () => {
     if (phase === 'spinning') return
-    const category =
-      foodCategories.find((c) => c.name === selectedCategory) ?? randomOf(foodCategories)
+    const pool =
+      selectedCategories.length > 0
+        ? foodCategories.filter((c) => selectedCategories.includes(c.name))
+        : foodCategories
+    const category = randomOf(pool)
     const sub = randomOf(category.subCategories)
     const restaurant = randomOf(sub.restaurants)
     setPicks({
@@ -78,12 +87,13 @@ export default function SlotMachine() {
         <h2 className="slot-machine__title">🎰 LUNCH JACKPOT 🎰</h2>
       </div>
 
-      {/* 음식 종류 선택 (완전 랜덤 / 직접 선택) */}
+      {/* 음식 종류 선택 (완전 랜덤 / 복수 선택) */}
       <CategoryPicker
         categories={foodCategories}
-        selected={selectedCategory}
+        selected={selectedCategories}
         disabled={phase === 'spinning'}
-        onSelect={setSelectedCategory}
+        onToggle={toggleCategory}
+        onClear={() => setSelectedCategories([])}
       />
 
       {/* 릴 + 레버 */}
