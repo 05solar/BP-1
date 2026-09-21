@@ -17,9 +17,10 @@
 ## 실행 방법
 
 ```bash
+cd app        # 앱 폴더로 이동
 npm install   # 의존성 설치
-npm run dev   # 개발 서버 (http://localhost:5173)
-npm run build # 프로덕션 빌드 (dist/)
+npm run dev   # 개발 서버 (http://localhost:5173/BP-1/)
+npm run build # 프로덕션 빌드 (app/dist/)
 ```
 
 ## 기술 스택
@@ -32,46 +33,48 @@ npm run build # 프로덕션 빌드 (dist/)
 
 ```
 BP-01/
-├── index.html                        # HTML 진입점 (폰트 로드, #root)
-├── vite.config.ts                    # Vite 설정 (GitHub Pages base: /BP-1/)
-├── tsconfig.json                     # TypeScript 설정
-├── package.json                      # 의존성·스크립트 정의
-├── agent.md                          # 프로젝트 작업 규칙 (에이전트용 지침)
-├── process.md                        # 진행 상황 기록 (명령마다 갱신)
-├── tools/
-│   └── fetchRestaurants.mjs          # 카카오 로컬 API로 식당 데이터 수집·menuData.ts 생성
+├── README.md                             # 프로젝트 소개 (본 문서)
+├── .github/workflows/deploy.yml          # GitHub Pages 자동 배포 워크플로
 ├── docs/
-│   └── screenshot.png                # README용 앱 스크린샷
-├── .github/workflows/deploy.yml      # GitHub Pages 자동 배포 워크플로
-└── src/
-    ├── main.tsx                      # React 앱 마운트 진입점
-    ├── index.css                     # 전역 스타일 (리셋·폰트·배경)
-    ├── App.tsx                       # 루트 컴포넌트 (Home 페이지 렌더링)
-    ├── data/
-    │   └── menuData.ts               # 음식종류→세부카테고리→식당 3단계 데이터
-    ├── pages/
-    │   └── Home/
-    │       ├── Home.tsx              # 메인 페이지 (타이틀 + 슬롯머신 배치)
-    │       └── Home.css              # 메인 페이지 스타일
-    └── components/
-        ├── CategoryPicker/
-        │   ├── CategoryPicker.tsx    # 음식 종류 선택 칩 (완전 랜덤 / 직접 선택)
-        │   └── CategoryPicker.css    # 선택 칩 버튼 스타일
-        ├── RestaurantList/
-        │   ├── RestaurantList.tsx    # 토글식 전체 식당 목록 사이드 드로어
-        │   └── RestaurantList.css    # 드로어·아코디언 스타일
-        ├── SlotMachine/
-        │   ├── SlotMachine.tsx       # 슬롯머신 본체 (스핀 로직·순차 정지 지휘)
-        │   └── SlotMachine.css       # 프레임·간판·전구·당첨줄 스타일
-        ├── SlotReel/
-        │   ├── SlotReel.tsx          # 릴 1개 (회전·감속·바운스·모션블러)
-        │   └── SlotReel.css          # 릴 창·유리 반사·플래시 스타일
-        ├── Lever/
-        │   ├── Lever.tsx             # 레버 (당김 애니메이션 + 스핀 트리거)
-        │   └── Lever.css             # 레버 막대·손잡이·받침 스타일
-        └── ResultBoard/
-            ├── ResultBoard.tsx       # 최종 결과판 (색종이 축하 효과)
-            └── ResultBoard.css       # 결과판 등장·confetti 스타일
+│   ├── screenshot.png                    # README용 앱 스크린샷
+│   ├── agent.md                          # 프로젝트 작업 규칙 (에이전트용 지침)
+│   └── process.md                        # 진행 상황 기록 (명령마다 갱신)
+└── app/                                  # 프론트엔드 앱 (React + TS + Vite)
+    ├── index.html                        # HTML 진입점 (폰트 로드, #root)
+    ├── vite.config.ts                    # Vite 설정 (GitHub Pages base: /BP-1/)
+    ├── tsconfig.json                     # TypeScript 설정
+    ├── package.json                      # 의존성·스크립트 정의
+    ├── tools/
+    │   └── fetchRestaurants.mjs          # 카카오 로컬 API로 식당 데이터 수집·menuData.ts 생성
+    └── src/
+        ├── main.tsx                      # React 앱 마운트 진입점
+        ├── index.css                     # 전역 스타일 (리셋·Pretendard 폰트·배경)
+        ├── App.tsx                       # 루트 컴포넌트 (Home 페이지 렌더링)
+        ├── data/
+        │   └── menuData.ts               # 음식종류→세부카테고리→식당 3단계 데이터 (자동 생성)
+        ├── pages/
+        │   └── Home/
+        │       ├── Home.tsx              # 메인 페이지 (슬롯머신 + 식당 목록 배치)
+        │       └── Home.css              # 메인 페이지 스타일
+        └── components/
+            ├── CategoryPicker/
+            │   ├── CategoryPicker.tsx    # 음식 종류 선택 칩 (완전 랜덤 / 직접 선택)
+            │   └── CategoryPicker.css    # 선택 칩 버튼 스타일
+            ├── RestaurantList/
+            │   ├── RestaurantList.tsx    # 토글식 전체 식당 목록 사이드 드로어
+            │   └── RestaurantList.css    # 드로어·아코디언 스타일
+            ├── SlotMachine/
+            │   ├── SlotMachine.tsx       # 슬롯머신 본체 (스핀 로직·순차 정지 지휘)
+            │   └── SlotMachine.css       # 프레임·간판·전구·당첨줄 스타일
+            ├── SlotReel/
+            │   ├── SlotReel.tsx          # 릴 1개 (회전·감속·바운스·모션블러)
+            │   └── SlotReel.css          # 릴 창·유리 반사·플래시 스타일
+            ├── Lever/
+            │   ├── Lever.tsx             # 레버 (당김 애니메이션 + 스핀 트리거)
+            │   └── Lever.css             # 레버 막대·손잡이·받침 스타일
+            └── ResultBoard/
+                ├── ResultBoard.tsx       # 최종 결과판 (색종이 축하 효과)
+                └── ResultBoard.css       # 결과판 등장·confetti 스타일
 ```
 
 ## 애니메이션 구현 포인트
@@ -85,12 +88,13 @@ BP-01/
 
 ## 데이터 갱신
 
-[`src/data/menuData.ts`](src/data/menuData.ts)는 **자동 생성 파일**입니다.
+[`app/src/data/menuData.ts`](app/src/data/menuData.ts)는 **자동 생성 파일**입니다.
 카카오 로컬 API(카테고리 검색, FD6)로 전북대 캠퍼스 주변을 격자 분할 수집한
 실제 식당 데이터이며, 각 식당은 카카오맵 상세 페이지(`place.map.kakao.com/...`)로 연결됩니다.
 
 ```bash
 # 카카오 developers에서 발급한 REST API 키를 환경변수로 전달 (키는 절대 커밋 금지)
+cd app
 KAKAO_REST_KEY=<REST_API_키> node tools/fetchRestaurants.mjs
 ```
 

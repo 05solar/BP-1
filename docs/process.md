@@ -115,6 +115,14 @@
   (docs/screenshot.png — Edge 헤드리스로 촬영)
 - push로 배포 워크플로 트리거, 배포 성공 확인
 
+### 17. 루트 폴더 정리 — app/·docs/ 구조로 재편 (2026-09-21)
+
+- 루트에는 README.md와 폴더만 남김 (첫 화면 깔끔하게)
+- 앱 전체(index.html, vite/ts 설정, package.json, src/, tools/, .gitignore) → `app/`
+- agent.md, process.md → `docs/` (스크린샷과 함께)
+- 배포 워크플로 working-directory·캐시·아티팩트 경로를 app/ 기준으로 수정
+- 이후 로컬 실행은 `cd app` 후 npm 명령 사용
+
 ## 다음에 할 수 있는 것 (아이디어)
 
 - 실제 식당 데이터 교체 (카카오 로컬 API 수집 스크립트)

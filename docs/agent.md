@@ -12,14 +12,19 @@ AI 에이전트와 개발자 모두 이 규칙을 따라야 합니다.
 - 애니메이션은 진짜 슬롯이 돌아가는 것처럼 공들여서 만든다.
 - GitHub Pages(`https://05solar.github.io/BP-1/`)로 배포한다.
 
+## 저장소 구조 규칙
+
+- **루트에는 README.md와 폴더만 둔다.** 앱 코드는 `app/`, 문서(agent.md·process.md·
+  스크린샷)는 `docs/`에 넣는다. 새 파일을 루트에 직접 만들지 않는다.
+
 ## 프론트엔드 구조 규칙
 
 1. **컴포넌트와 페이지의 `.tsx` / `.css` 파일은 반드시 분리한다.**
    (스타일을 tsx 안에 inline으로 넣지 않는다.)
 2. **컴포넌트는 각각 폴더로 분리한다.**
-   예: `src/components/SlotReel/SlotReel.tsx` + `SlotReel.css`
+   예: `app/src/components/SlotReel/SlotReel.tsx` + `SlotReel.css`
 3. **페이지도 페이지별로 폴더를 분리한다.**
-   예: `src/pages/Home/Home.tsx` + `Home.css`
+   예: `app/src/pages/Home/Home.tsx` + `Home.css`
 4. **Tailwind CSS를 사용하지 않는다.** 순수 CSS만 사용한다.
 5. **모든 tsx/css 파일 최상단에 주석으로 "어떤 컴포넌트/페이지인지" 설명을 적는다.**
 
@@ -33,7 +38,7 @@ AI 에이전트와 개발자 모두 이 규칙을 따라야 합니다.
 
 ## 배포 규칙
 
-9. `vite.config.ts`의 `base`는 `/BP-1/`로 유지한다 (GitHub Pages 경로).
+9. `app/vite.config.ts`의 `base`는 `/BP-1/`로 유지한다 (GitHub Pages 경로).
 10. `main` 브랜치 push 시 `.github/workflows/deploy.yml`이 자동 배포한다.
 
 ## 버전 관리 규칙
