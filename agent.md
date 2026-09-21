@@ -35,3 +35,7 @@ AI 에이전트와 개발자 모두 이 규칙을 따라야 합니다.
 
 9. `vite.config.ts`의 `base`는 `/BP-1/`로 유지한다 (GitHub Pages 경로).
 10. `main` 브랜치 push 시 `.github/workflows/deploy.yml`이 자동 배포한다.
+
+## 버전 관리 규칙
+
+11. **수정할 때마다 커밋하고 push한다.** (작업 요청 하나를 완료하면 즉시 commit + push)
