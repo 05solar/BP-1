@@ -13,6 +13,8 @@ interface ResultBoardProps {
   emoji: string
   subCategory: string
   restaurant: string
+  /** 카카오맵 상세 페이지 URL */
+  restaurantUrl: string
 }
 
 const CONFETTI_COLORS = ['#ff5d5d', '#ffd447', '#5dd6ff', '#7dff8a', '#d98cff', '#ff9d47']
@@ -23,6 +25,7 @@ export default function ResultBoard({
   emoji,
   subCategory,
   restaurant,
+  restaurantUrl,
 }: ResultBoardProps) {
   if (!visible) return null
 
@@ -47,7 +50,7 @@ export default function ResultBoard({
       </div>
       <a
         className="result-board__restaurant"
-        href={`https://map.kakao.com/link/search/${encodeURIComponent(`전주 ${restaurant}`)}`}
+        href={restaurantUrl}
         target="_blank"
         rel="noreferrer"
         title="카카오맵에서 위치 보기"

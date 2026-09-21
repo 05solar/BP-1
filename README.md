@@ -5,7 +5,7 @@
 
 - **1번 릴** — 음식 종류 (한식 / 중식 / 일식 / 양식 / 아시안 / 야식·분식 / 카페·브런치)
 - **2번 릴** — 세부 카테고리 (국밥·탕, 마라탕, 라멘·우동, 파스타·피자 …)
-- **3번 릴** — 실제 식당 (전북대 근처 식당 200여 곳, 예시 데이터)
+- **3번 릴** — 실제 식당 (카카오 로컬 API로 수집한 전북대 주변 실제 식당 367곳)
 
 결과판의 식당 이름을 클릭하면 **카카오맵 검색 결과(위치)** 가 새 탭으로 열립니다.
 
@@ -35,6 +35,8 @@ BP-01/
 ├── package.json                      # 의존성·스크립트 정의
 ├── agent.md                          # 프로젝트 작업 규칙 (에이전트용 지침)
 ├── process.md                        # 진행 상황 기록 (명령마다 갱신)
+├── tools/
+│   └── fetchRestaurants.mjs          # 카카오 로컬 API로 식당 데이터 수집·menuData.ts 생성
 ├── .github/workflows/deploy.yml      # GitHub Pages 자동 배포 워크플로
 └── src/
     ├── main.tsx                      # React 앱 마운트 진입점
@@ -70,10 +72,16 @@ BP-01/
 - **디테일**: 릴 창 위아래 음영(원통 드럼 느낌), 유리 반사광, 정지 순간 플래시,
   전구 교차 점멸(당첨 시 고속 점멸), 결과판 색종이 낙하
 
-## 데이터 수정
+## 데이터 갱신
 
-식당 목록은 [`src/data/menuData.ts`](src/data/menuData.ts) 한 파일만 고치면 됩니다.
-현재 데이터는 전북대 근처 기준의 **예시 데이터**이므로 실제로 가는 가게로 바꿔서 쓰세요.
+[`src/data/menuData.ts`](src/data/menuData.ts)는 **자동 생성 파일**입니다.
+카카오 로컬 API(카테고리 검색, FD6)로 전북대 캠퍼스 주변을 격자 분할 수집한
+실제 식당 데이터이며, 각 식당은 카카오맵 상세 페이지(`place.map.kakao.com/...`)로 연결됩니다.
+
+```bash
+# 카카오 developers에서 발급한 REST API 키를 환경변수로 전달 (키는 절대 커밋 금지)
+KAKAO_REST_KEY=<REST_API_키> node tools/fetchRestaurants.mjs
+```
 
 ## 배포 (GitHub Pages)
 

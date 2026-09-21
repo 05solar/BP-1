@@ -13,6 +13,7 @@ import {
   foodCategories,
   allSubCategoryNames,
   allRestaurantNames,
+  type Restaurant,
 } from '../../data/menuData'
 import './SlotMachine.css'
 
@@ -22,7 +23,7 @@ interface Picks {
   category: string
   emoji: string
   subCategory: string
-  restaurant: string
+  restaurant: Restaurant
 }
 
 const REEL_DURATIONS = [2400, 3600, 4800]
@@ -95,7 +96,7 @@ export default function SlotMachine() {
           <SlotReel
             label="식당"
             items={allRestaurantNames}
-            target={picks?.restaurant ?? allRestaurantNames[0]}
+            target={picks?.restaurant.name ?? allRestaurantNames[0]}
             spinId={spinId}
             duration={REEL_DURATIONS[2]}
             onStop={handleReelStop}
@@ -119,7 +120,8 @@ export default function SlotMachine() {
           category={picks.category}
           emoji={picks.emoji}
           subCategory={picks.subCategory}
-          restaurant={picks.restaurant}
+          restaurant={picks.restaurant.name}
+          restaurantUrl={picks.restaurant.url}
         />
       )}
     </div>
