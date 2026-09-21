@@ -1,0 +1,160 @@
+/**
+ * [컴포넌트 스타일] RestaurantList.css
+ * 식당 목록 사이드 드로어와 토글 버튼, 카테고리 아코디언 스타일입니다.
+ */
+
+/* ── 토글 버튼 (오른쪽 가장자리 고정) ── */
+.restaurant-list__toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 30;
+  padding: 10px 16px;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 215, 100, 0.55);
+  background: rgba(20, 8, 40, 0.85);
+  color: #ffd9a8;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.restaurant-list__toggle:hover {
+  transform: translateY(-2px);
+  border-color: #ffdf7e;
+}
+
+/* ── 드로어 패널 ── */
+.restaurant-list {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 20;
+  width: min(360px, 88vw);
+  height: 100vh;
+  padding: 70px 0 0;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #241040 0%, #170a2e 100%);
+  border-left: 3px solid rgba(255, 215, 100, 0.5);
+  box-shadow: -12px 0 34px rgba(0, 0, 0, 0.55);
+  transform: translateX(100%);
+  transition: transform 0.28s ease;
+}
+
+.restaurant-list.is-open {
+  transform: translateX(0);
+}
+
+.restaurant-list__title {
+  padding: 0 20px 12px;
+  font-size: 19px;
+  font-weight: 800;
+  color: #ffe9ae;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.restaurant-list__title span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #cbb3ff;
+  margin-left: 6px;
+}
+
+.restaurant-list__scroll {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 14px 24px;
+}
+
+/* ── 카테고리 아코디언 ── */
+.restaurant-list__category {
+  margin-bottom: 6px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.restaurant-list__category summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 11px 14px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffd9a8;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.restaurant-list__category summary::-webkit-details-marker {
+  display: none;
+}
+
+.restaurant-list__category summary::after {
+  content: '▾';
+  margin-left: auto;
+  color: #8f7bb8;
+  transition: transform 0.2s ease;
+}
+
+.restaurant-list__category[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.restaurant-list__count {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a2a00;
+  background: linear-gradient(180deg, #ffdf7e, #e8a93d);
+  border-radius: 999px;
+  padding: 1px 8px;
+  margin-left: 4px;
+}
+
+/* ── 세부 카테고리와 식당 ── */
+.restaurant-list__sub {
+  padding: 2px 14px 10px;
+}
+
+.restaurant-list__sub-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: #cbb3ff;
+  margin: 6px 0 4px;
+}
+
+.restaurant-list__items {
+  list-style: none;
+}
+
+.restaurant-list__items li {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+.restaurant-list__items a {
+  display: block;
+  padding: 6px 4px;
+  font-size: 14px;
+  color: #efe7ff;
+  text-decoration: none;
+}
+
+.restaurant-list__items a:hover {
+  color: #ffdf7e;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 640px) {
+  .restaurant-list__toggle {
+    top: 12px;
+    right: 12px;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}

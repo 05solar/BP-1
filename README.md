@@ -53,6 +53,9 @@ BP-01/
         ├── CategoryPicker/
         │   ├── CategoryPicker.tsx    # 음식 종류 선택 칩 (완전 랜덤 / 직접 선택)
         │   └── CategoryPicker.css    # 선택 칩 버튼 스타일
+        ├── RestaurantList/
+        │   ├── RestaurantList.tsx    # 토글식 전체 식당 목록 사이드 드로어
+        │   └── RestaurantList.css    # 드로어·아코디언 스타일
         ├── SlotMachine/
         │   ├── SlotMachine.tsx       # 슬롯머신 본체 (스핀 로직·순차 정지 지휘)
         │   └── SlotMachine.css       # 프레임·간판·전구·당첨줄 스타일

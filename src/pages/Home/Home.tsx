@@ -4,12 +4,14 @@
  * 전북대학교 근처 점심 메뉴를 슬롯머신으로 추천받는 화면입니다.
  */
 import SlotMachine from '../../components/SlotMachine/SlotMachine'
+import RestaurantList from '../../components/RestaurantList/RestaurantList'
 import './Home.css'
 
 export default function Home() {
   return (
     <main className="home">
       <SlotMachine />
+      <RestaurantList />
     </main>
   )
 }
