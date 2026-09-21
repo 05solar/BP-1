@@ -98,7 +98,6 @@ const TOP_MAP = {
 }
 // 점심 메뉴가 아니거나(술집·간식=빵집·디저트류) 분류 불명(기타)인 상위 카테고리는 제외
 const EXCLUDE_TOP = new Set(['술집', '간식', '기타'])
-const MAX_PER_SUB = 15
 const MIN_PER_SUB = 3
 
 async function main() {
@@ -135,7 +134,7 @@ async function main() {
     })
   }
 
-  // 정리: 가까운 순 정렬 + 상한 적용, 너무 작은 세부는 '기타'로 병합
+  // 정리: 가까운 순 정렬 (상한 없이 전체 수록), 너무 작은 세부는 '그 외'로 병합
   const emojiOf = (cat) =>
     Object.values(TOP_MAP).find((v) => v.name === cat)?.emoji ?? '🍽️'
 
@@ -145,13 +144,13 @@ async function main() {
     const misc = []
     for (const [subName, list] of subs) {
       list.sort((a, b) => a.dist - b.dist)
-      const trimmed = list.slice(0, MAX_PER_SUB).map(({ name, url }) => ({ name, url }))
-      if (trimmed.length >= MIN_PER_SUB) subList.push({ name: subName, restaurants: trimmed })
-      else misc.push(...trimmed)
+      const cleaned = list.map(({ name, url }) => ({ name, url }))
+      if (cleaned.length >= MIN_PER_SUB) subList.push({ name: subName, restaurants: cleaned })
+      else misc.push(...cleaned)
     }
     // '기타' 카테고리의 잔여 묶음은 분류 불명 가게가 섞이므로 버린다
     if (misc.length >= MIN_PER_SUB && catName !== '기타')
-      subList.push({ name: '그 외', restaurants: misc.slice(0, MAX_PER_SUB) })
+      subList.push({ name: '그 외', restaurants: misc })
     if (subList.length > 0)
       categories.push({ name: catName, emoji: emojiOf(catName), subCategories: subList })
   }
@@ -172,7 +171,7 @@ async function main() {
   const ts = `/**
  * [데이터 파일] menuData.ts  ⚠️ 자동 생성 — 직접 수정하지 마세요
  * tools/fetchRestaurants.mjs가 카카오 로컬 API로 생성한 전북대학교 주변 실제 식당 데이터입니다.
- * (생성일: ${today}, 헌혈의집 전북대한옥센터 기준 반경 ${RADIUS_M / 1000}km, 세부 카테고리당 가까운 순 최대 ${MAX_PER_SUB}곳)
+ * (생성일: ${today}, 헌혈의집 전북대한옥센터 기준 반경 ${RADIUS_M / 1000}km 내 전체, 가까운 순 정렬)
  * 갱신:  KAKAO_REST_KEY=<키> node tools/fetchRestaurants.mjs
  */
 
