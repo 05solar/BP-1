@@ -27,7 +27,7 @@ interface Picks {
   restaurant: Restaurant
 }
 
-const REEL_DURATIONS = [2400, 3600, 4800]
+const REEL_DURATIONS = [1500, 2300, 3100]
 const BULB_COUNT = 14
 
 function randomOf<T>(arr: T[]): T {
